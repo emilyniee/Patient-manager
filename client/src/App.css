@@ -1,0 +1,41 @@
+.patientScreen {
+  display: flex;
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  font-size: 30px;
+}
+
+h2{
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 15px;
+}
+
+.patients{
+  background-color: grey;
+  border-radius: 10px;
+  padding: 5vw;
+  margin: 1vh;
+  width: 40vw;
+}
+
+.patientsDisplay{
+  display: block;
+}
+
+.addPatientForm{
+  display: block;
+  width: 30vw;
+  margin-left: 10vw;
+}
+
+input{
+  margin: 10px;
+}
+
+button{
+  margin: 10px;
+}
