@@ -1,24 +1,35 @@
+:root{
+  --off-white: #ededed
+}
+
+body{
+  background-image: url(images/background.webp);
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .patientScreen {
   display: flex;
 }
 
 h1{
-  font-family: 'Courier New', Courier, monospace;
-  color: black;
+  
+  color: white;
   font-size: 30px;
+  margin-left: 5vw;
+  margin-top: 5vw;
 }
 
 h2{
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
-  font-size: 15px;
+  color: black;
+  font-size: 12px;
 }
 
 .patients{
-  background-color: grey;
+  background-color: var(--off-white);
   border-radius: 10px;
-  padding: 5vw;
-  margin: 1vh;
+  padding: 2vw;
+  margin: 2vh;
+  margin-left: 5vw;
   width: 40vw;
 }
 
@@ -27,15 +38,32 @@ h2{
 }
 
 .addPatientForm{
+  background: var(--off-white);
+  border-radius: 10px;
   display: block;
   width: 30vw;
-  margin-left: 10vw;
+  margin-left: 60vw;
+  margin-top: 2vh;
+  position: fixed;
 }
 
 input{
   margin: 10px;
+  width: 20vw;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+textarea{
+  margin: 10px;
+  width: 20vw;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 button{
   margin: 10px;
+  width: 20vw;
+  background-color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+  border-color: white;
+  border-radius: 10px;
 }

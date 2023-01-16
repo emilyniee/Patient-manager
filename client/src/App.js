@@ -85,14 +85,14 @@ function App() {
           />
           <input 
             type = "number" 
-            placeholder = "Height" 
+            placeholder = "Height(cm)" 
             onChange = {(event) => {
               setHeight(event.target.value);
             }}
           />
           <input 
             type = "number" 
-            placeholder = "Weight" 
+            placeholder = "Weight(kg)" 
             onChange = {(event) => {
               setWeight(event.target.value);
             }}
@@ -104,7 +104,8 @@ function App() {
               setEmail(event.target.value);
             }}
           />
-          <input 
+        
+          <textarea 
             type = "text" 
             placeholder = "Medical History" 
             onChange = {(event) => {
