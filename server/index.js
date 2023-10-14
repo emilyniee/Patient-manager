@@ -4,13 +4,15 @@ import cors from 'cors';
 
 import UserModel from './models/patients.js';
 
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-const CONNECTION_URL = "mongodb+srv://emilynnn:Ilikecheese1@cluster0.h7qc1e4.mongodb.net/patientManager?retryWrites=true&w=majority"
+const CONNECTION_URL = "mongodb+srv://emilynnn:"+ process.env.PASSWORD + "@cluster0.h7qc1e4.mongodb.net/patientManager?retryWrites=true&w=majority"
 
 mongoose.connect(CONNECTION_URL)
     .then(() => app.listen (3001, () =>  console.log('server is running')))
