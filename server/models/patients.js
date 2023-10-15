@@ -25,10 +25,6 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    medicalHistory: {
-        type: String,
-        required: false,
-    },
 });
 
 const patients = mongoose.model("patients", patientSchema)

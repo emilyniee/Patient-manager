@@ -13,7 +13,6 @@ function App() {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [email, setEmail] = useState("");
-  const [medicalHistory, setMedicalHistory] = useState("");
 
   useEffect(() => {
     Axios.get("http://localhost:3001/getPatients").then((response) => {
@@ -29,7 +28,6 @@ function App() {
       height,
       weight,
       email,
-      medicalHistory
     }).then((response)=>{
       alert("success, patient added!");
       setListOfPatients([...listOfPatients,{
@@ -39,7 +37,6 @@ function App() {
         height,
         weight,
         email,
-        medicalHistory
       }])
     });
   };
@@ -93,7 +90,7 @@ return (
                 setDob(event.target.value);
               }}
               ></input>
-            <label for="floatingInputGroup1">Dob</label>
+            <label for="floatingInputGroup1">DOB</label>
           </div>
         </div>
         <div className="input-group mb-3">
@@ -127,42 +124,16 @@ return (
               className="form-control" 
               id="floatingInputGroup1" 
               onChange = {(event) => {
-                setDob(event.target.value);
+                setEmail(event.target.value);
               }}
               ></input>
             <label for="floatingInputGroup1">Email</label>
           </div>
         </div>
-        <div className="input-group mb-3">
-          <div className="form-floating">
-            <input 
-              type="text" 
-              className="form-control" 
-              id="floatingInputGroup1" 
-              onChange = {(event) => {
-                setEmail(event.target.value);
-              }}
-              ></input>
-            <label for="floatingInputGroup1">Dob</label>
-          </div>
-        </div>
-        <div className="input-group mb-3">
-          <div className="form-floating">
-            <input 
-              className="form-control" 
-              id="floatingInputGroup1" 
-              rows="10"
-              onChange = {(event) => {
-                setMedicalHistory(event.target.value);
-              }}
-              ></input>
-            <label for="floatingInputGroup1">Medical History</label>
-          </div>
-        </div>
         <button type="button" class="btn btn-light" onClick = {createPatient}>Add Patient</button>
       </div>
       <div class="col">
-        <h1>Patients</h1>
+        <h2>Patients</h2>
         <table class="table">
           <thead>
             <tr>
@@ -170,8 +141,8 @@ return (
               <th scope="col">Gender</th>
               <th scope="col">DOB</th>
               <th scope="col">Height</th>
+              <th scope="col">Weight</th>
               <th scope="col">Email</th>
-              <th scope="col">Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -182,8 +153,8 @@ return (
                   <td>{patient.gender}</td>
                   <td>{patient.dob}</td>
                   <td>{patient.height}</td>
+                  <td>{patient.weight}</td>
                   <td>{patient.email}</td>
-                  <td>{patient.medicalHistory}</td>
                 </tr>
               );
             })}
