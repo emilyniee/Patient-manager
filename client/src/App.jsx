@@ -1,8 +1,9 @@
-import './App.css';
 import { useState, useEffect} from "react";
 import Axios from "axios"
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const [listOfPatients, setListOfPatients] = useState ([]);
@@ -43,154 +44,159 @@ function App() {
     });
   };
 
-  return (
-    <div className="App">
-      <h1>Patients</h1>
-      <div className='patientScreen'>
-        <div className = "patientsDisplay"> 
-          {listOfPatients.map((patient) => {
-            return (
-              <div className='patients'>
-                <h2>Name: {patient.name}</h2>
-                <h2>Gender: {patient.gender}</h2>
-                <h2>Date of Birth: {patient.dob}</h2>
-                <h2>Height: {patient.height}</h2>
-                <h2>Weight: {patient.weight}</h2>
-                <h2>Email: {patient.email}</h2>
-                <h2>Medical History: {patient.medicalHistory}</h2>
-              </div>
-            );
-          })}
+return (
+  <div>
+  <nav class="navbar" style={{'background-color': 'lightblue'}}>
+      <div class="container-fluid p-2 px-3">
+      Dashboard
+      <span class="navbar-text">
+        <i class="bi bi-person-circle"></i>
+      </span>
+      </div>
+    </nav>
+  <div class="p-4">
+    <div class="row align-items-start">
+      <div class="col-4 rounded p-3" style={{'background-color': 'lightblue'}}>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="text" 
+              className="form-control" 
+              id="floatingInputGroup1"
+              onChange = {(event) => {
+                setName(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Name</label>
+          </div>
         </div>
-        
-        
-
-        <div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="Name"
-                onChange = {(event) => {
-                  setName(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Name</label>
-            </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="text" 
+              className="form-control" 
+              id="floatingInputGroup1"
+              onChange = {(event) => {
+                setGender(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Gender</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="Gender"
-                onChange = {(event) => {
-                  setGender(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Gender</label>
-            </div>
+        </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="text" 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              onChange = {(event) => {
+                setDob(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Dob</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="DOB"
-                onChange = {(event) => {
-                  setDob(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Dob</label>
-            </div>
+        </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="number" 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              onChange = {(event) => {
+                setHeight(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Height(cm)</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="number" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="Height(cm)"
-                onChange = {(event) => {
-                  setHeight(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Height(cm)</label>
-            </div>
+          <div className="form-floating">
+            <input 
+              type="number" 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              onChange = {(event) => {
+                setWeight(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Weight(kg)</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="number" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="Weight(kg)"
-                onChange = {(event) => {
-                  setWeight(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Weight(kg)</label>
-            </div>
+        </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="text" 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              onChange = {(event) => {
+                setDob(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Email</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="email"
-                onChange = {(event) => {
-                  setDob(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Email</label>
-            </div>
+        </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              type="text" 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              onChange = {(event) => {
+                setEmail(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Dob</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <input 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="DOB"
-                onChange = {(event) => {
-                  setEmail(event.target.value);
-                }}
-                ></input>
-              <label for="floatingInputGroup1">Dob</label>
-            </div>
+        </div>
+        <div className="input-group mb-3">
+          <div className="form-floating">
+            <input 
+              className="form-control" 
+              id="floatingInputGroup1" 
+              rows="10"
+              onChange = {(event) => {
+                setMedicalHistory(event.target.value);
+              }}
+              ></input>
+            <label for="floatingInputGroup1">Medical History</label>
           </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">@</span>
-            <div className="form-floating">
-              <textarea 
-                type="text" 
-                className="form-control" 
-                id="floatingInputGroup1" 
-                placeholder="Medical History"
-                onChange = {(event) => {
-                  setMedicalHistory(event.target.value);
-                }}
-                ></textarea>
-              <label for="floatingInputGroup1">Medical History</label>
-            </div>
-          </div>
-          <button onClick = {createPatient}>Add Patient</button>
+        </div>
+        <button type="button" class="btn btn-light" onClick = {createPatient}>Add Patient</button>
+      </div>
+      <div class="col">
+        <h1>Patients</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">DOB</th>
+              <th scope="col">Height</th>
+              <th scope="col">Email</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          {listOfPatients.map((patient, i) => {
+              return (
+                <tr>
+                  <th scope="row">{patient.name}</th>
+                  <td>{patient.gender}</td>
+                  <td>{patient.dob}</td>
+                  <td>{patient.height}</td>
+                  <td>{patient.email}</td>
+                  <td>{patient.medicalHistory}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className="accordion" id="accordionExample">
+          
         </div>
       </div>
     </div>
-  );
+  </div>
+  </div>
+);
 }
 
 export default App;
